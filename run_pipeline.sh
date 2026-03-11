@@ -24,7 +24,7 @@ if [ -z "$HF_TOKEN" ]; then
     echo "[!] Warning: HF_TOKEN is not set. Gemma download might fail if it's a gated model."
 fi
 # Note: Ensure you have accepted Google's terms on Hugging Face for Gemma 2!
-huggingface-cli download google/gemma-2-9b --local-dir "$GEMMA_DIR" --token "$HF_TOKEN"
+huggingface-cli download google/gemma-3-12b-it --local-dir "$GEMMA_DIR" --token "$HF_TOKEN"
 
 echo "--- Step 3: Processing Prompts ---"
 if [ ! -f "prompts.txt" ]; then

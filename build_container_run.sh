@@ -1,5 +1,5 @@
-docker build -t ltx_2_3_auto . && docker run --rm \
-                                            --gpus "device=0" \
+docker build -t ltx_2_3_auto . && docker run \
+                                            --gpus "device=1" \
                                             --shm-size=8g \
                                             --env-file .env \
                                             -v /mnt/data/test_dataset/models/LTX2_3:/workspace/LTX-2/LTX-Models \
