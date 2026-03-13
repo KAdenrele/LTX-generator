@@ -43,7 +43,7 @@ while IFS= read -r prompt || [ -n "$prompt" ]; do
     fi
 
     # Create safe filename and skip if it already exists
-    SAFE_NAME=$(echo "$prompt" | cut -c 1-50 | tr -dc '[:alnum:]_ ' | tr ' ' '_').mp4
+    SAFE_NAME=$(echo "$prompt" | tail -c 50 | tr -dc '[:alnum:]_ ' | tr ' ' '_').mp4
     OUTPUT_FILE="$OUTPUT_DIR/$SAFE_NAME"
 
     if [ -f "$OUTPUT_FILE" ]; then
