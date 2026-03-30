@@ -1,6 +1,6 @@
-docker build -t ltx_2_3_auto . && docker run \
+docker build -t ltx_2_3_auto . && docker run --rm \
                                             --gpus "device=1" \
-                                            --shm-size=8g \
+                                            --ipc=host \
                                             --env-file .env \
                                             -v /mnt/data/test_dataset/models/LTX2_3:/workspace/LTX-2/LTX-Models \
                                             -v /mnt/data/test_dataset/models/Gemma:/workspace/LTX-2/Gemma-Models \
